@@ -3,6 +3,9 @@ services:
   clamd:
     image: clamav/clamav:stable
     restart: unless-stopped
+    environment:
+      - HTTPProxyServer=proxy4.bri.co.id
+      - HTTPProxyPort=1707
     networks:
       - clam-net
   api:
